@@ -1,12 +1,48 @@
 # protofire
-protofire is a modular, multi-protocol fuzzer targeting Industrial Control System (ICS) and Operational Technology (OT) protocols. Designed for red team operators, fuzzing researchers, and security engineers working with ICS/SCADA environments.
+![Status: Alpha](https://img.shields.io/badge/Status-Alpha-orange)
+![ICS Protocols: Modbus/DNP3/S7/IEC104/OPCUA](https://img.shields.io/badge/ICS%20Protocols-Modbus%2FDNP3%2FS7%2FIEC104%2FOPCUA-blue)
+![Air-Gapped Compatible](https://img.shields.io/badge/Offline-Airgapped%20Safe-green)
+![CI Safety Mode](https://img.shields.io/badge/CI%20Testing-Safe-blue)
+![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey)
+![Critical Infrastructure Research](https://img.shields.io/badge/Use-OT%20Security%20Research-red)
 
-**Status: Alpha**
+protofire is a modular, multi-protocol fuzzer targeting Industrial Control System (ICS) and Operational Technology (OT) protocols. Designed for red team operators, fuzzing researchers, and security engineers working with ICS/SCADA environments.
 
 > `protofire` is in **alpha** — use at your own risk. Expect bugs, instability, and rapid changes.  
 > Ideal for **red team experiments**, and **industrial protocol research**.
 
-![status: alpha](https://img.shields.io/badge/status-alpha-orange)
+## Legal & Safety Notice 
+
+Use ONLY on:
+
+Systems you own
+
+Dedicated testbeds
+
+Targets with explicit written authorization
+
+Improper use risks service disruption affecting:
+
+Power grids
+
+Water utilities
+
+Transportation
+
+Manufacturing safety
+
+You - the operator - assume all responsibility.
+
+### MITRE ICS ATT&CK Mapping
+
+| Behavior Category | Technique Name | Technique ID | Domain |
+|------------------|----------------|--------------|--------|
+| Malformed industrial payloads | Manipulation of Control | T0820 | ICS |
+| Protocol corruption causing faults | Denial of Control | T0814 | ICS |
+| Abnormal data forcing actuation | Signal Manipulation | T0831 | ICS |
+| Runtime crashes via parsing errors | Damage to Peripherals | T0866 | ICS |
+| PCAP replay traffic mutation | Spoof Reporting Messages | T0886 | ICS |
+| Field boundary violations | Exploit Capabilities | T0828 | ICS |
 
 
 ## Features
@@ -164,6 +200,26 @@ License
 ------------------------
 
 This project is licensed under the [MIT License](LICENSE).
+
+<!--
+SEO FOOTER — ICS/SCADA PROTOCOL FUZZING TOOLKIT
+
+Description:
+Advanced fuzzing and anomaly discovery tool for ICS/OT cyber-physical systems including Modbus, DNP3, S7comm, IEC104, OPC-UA. Enables secure validation of industrial automation and critical infrastructure resilience.
+
+Primary Search Keywords:
+ICS cybersecurity, SCADA protocol fuzzer, industrial control system testing, OT red team tools, Siemens S7 exploitation research, Modbus penetration testing, DNP3 fuzzing engine, OPC-UA fuzzing, critical infrastructure cyber defense, PLC fuzzing tools, PCAP replay, industrial protocol mutation, grid security, water treatment plant cybersecurity, manufacturing automation safety tests
+
+Secondary Search Keywords:
+stateful protocol fuzzing, cyber-physical anomaly testing, control safety validation, industrial protocol security scanner, secure fuzz harness for operational technology, ICS network simulation red team, 61850 alternative analysis
+
+Target Audience:
+OT security engineers, ICS researchers, Red/Blue team operators, industrial automation defenders, power utility cybersecurity teams, ICS/SCADA labs and universities.
+
+Purpose:
+Maximize GitHub discoverability and CSIRT lab adoption; protect critical infrastructure by exposing exploitable protocol behavior before adversaries do.
+-->
+
 
 > Use this software **only** in environments you **own** or have **explicit authorization** to test.
 > Misuse of this tool is illegal and unethical.
